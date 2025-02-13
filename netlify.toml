@@ -1,0 +1,12 @@
+[build]
+  base = ""  # Your base directory, if any
+  publish = "public"  # Directory to publish
+  command = "npm run build"  # Command to build your site
+
+[build.environment]
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

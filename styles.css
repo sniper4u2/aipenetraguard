@@ -47,7 +47,38 @@ footer {
   color: white;
   text-align: center;
   padding: 1em 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+}
+
+.admin-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.admin-controls button {
+  padding: 1em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.admin-controls button:hover {
+  background-color: #45a049;
+}
+
+.hidden {
+  display: none;
+}
+
+#c2-output {
+  margin-top: 2em;
+}
+
+#c2-log {
+  background-color: #f0f0f0;
+  padding: 1em;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
 }

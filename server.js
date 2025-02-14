@@ -1,29 +1,27 @@
 const express = require('express');
 const app = express();
-const port = 4000; // Changed from 3000 to 4000
+const port = 4000;
 
-app.use(express.static('public'));
+// Example of a merged section
+// <<<<<<< HEAD
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+// =======
+app.get('/status', (req, res) => {
+    res.send('Server is running.');
+});
+// >>>>>>> branch-name
 
-app.get('/start-c2', (req, res) => {
-  res.send('C2 server started...\n');
-  // Add logic to start the C2 server
+// Ensure both features are preserved
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
 
-app.get('/stop-c2', (req, res) => {
-  res.send('C2 server stopped...\n');
-  // Add logic to stop the C2 server
-});
-
-app.get('/view-logs', (req, res) => {
-  res.send('Fetching logs...\n');
-  // Add logic to fetch logs
-});
-
-app.get('/manage-users', (req, res) => {
-  res.send('Managing users...\n');
-  // Add logic to manage users
+app.get('/status', (req, res) => {
+    res.send('Server is running.');
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
